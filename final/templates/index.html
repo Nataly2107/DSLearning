@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link rel='stylesheet' href="/static/styles.css"/>
+    <link rel='section' href="/static/temp-plot.html"/>
+
+
+</head>
+
+</head>
+
+<body>
+<div class="login">
+    <h1 class="title">Currency in RUB</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('home')}}" method="get">
+        <section>
+            <table class="table" width="15%">
+                <tr class="table__header">
+                    {% for header in headers %}
+                    <th class="table__cell">{{header}}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in data %}
+                <tr class="table__row" width="3000">
+                    {% for cell in row %}
+                    <td class="table__cell">{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+        <section>
+            <iframe src="/static/temp-plot.html" width="1000" height="620"></iframe>
+        </section>
+    </form>
+
+    <br>
+    <br>
+
+</div>
+
+
+</body>
+</html>
